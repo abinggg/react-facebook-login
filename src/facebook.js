@@ -53,17 +53,6 @@ class FacebookLogin extends React.Component {
         FB.getLoginStatus(this.checkLoginState);
       }
     };
-
-    // Load the SDK asynchronously
-    ((d, s, id) => {
-      const element = d.getElementsByTagName(s)[0];
-      const fjs = element;
-      let js = element;
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = '//connect.facebook.net/' + this.props.language + '/sdk.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
   }
 
   responseApi = (authResponse) => {
@@ -90,7 +79,6 @@ class FacebookLogin extends React.Component {
   renderWithFontAwesome() {
     return (
       <div>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
          <button
             className={this.props.cssClass + ' ' + this.props.size}
             onClick={this.click}>
