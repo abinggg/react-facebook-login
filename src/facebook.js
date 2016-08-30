@@ -38,7 +38,7 @@ class FacebookLogin extends React.Component {
   componentDidMount() {
     let fbRootContainer = document.getElementById('fb-root');
     
-    if(fbRootContainer) {
+    if(!fbRootContainer) {
       let fbRoot = document.createElement('div');
           fbRoot.id = 'fb-root';
 
